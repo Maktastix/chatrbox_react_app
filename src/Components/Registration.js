@@ -1,22 +1,41 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import Avatar from '../assets/icons8_add_image.png';
 
-function Registration() {
+const Registration = () => {
     
     return(
         <section>
-            <div className="wrapper">
-                <div className="registration_form">
-                    <h1>ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} bounce  />x</h1>
-                    <form className="register">
-                        <label htmlFor="name"></label>
-                        <input type="text" id="name" placeholder="Display Name" required></input>
-                        <label htmlFor="password"></label>
-                        <input type="password" id="password" placeholder="Password" required></input>
-                        <input type="file" id="avatar" accept="image/png, image/jpeg"></input>
-                        <button type="submit">Register</button>
+            <div className="registration_card">
+                <div className="registration_container">
+                    <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} />X</h1>
+                    <p>Welcome to ChatrBox</p>
+                    <p>Please Create an Account</p>
+                    <form className="registration_form">
+                        <div className="form_input">
+                            <label htmlFor="name"></label>
+                            <input type="text" id="name" placeholder="Enter Display Name" required></input>
+                        </div>
+                        <div className="form_input">
+                            <label htmlFor="email"></label>
+                            <input type="email" id="email" placeholder="Enter Email" required></input>
+                        </div>
+                        <div className="form_input">
+                            <label htmlFor="password"></label>
+                            <input type="password" id="password" placeholder="Enter Password" required></input>
+                        </div>
+                        <div className="form_file">
+                            <label htmlFor="avatar">
+                                <img src={Avatar} alt="Add image icon" />
+                                <p>Add Profile Picture</p>
+                            </label>
+                            <input type="file" id="avatar" accept="image/png, image/jpeg"></input>
+                        </div>
+                        <div className="form_button">
+                            <button type="submit">Sign Up</button>
+                        </div>
                     </form>
-                    <p>Already have an account? <a href="#">Login!</a></p>
+                    <p>Already have an account? <a href="#">Log in!</a></p>
                 </div>
             </div>
         </section>

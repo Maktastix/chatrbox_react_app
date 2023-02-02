@@ -1,13 +1,14 @@
 import Firebase from './Firebase';
-import './App.css';
 import Registration from './Components/Registration';
+import Login from './Components/Login';
+import "./styles/styles.scss";
 
 function App() {
 
   
   return (
     <div className="App">
-      <Registration />
+      <Login />
     </div>
   );
 }
