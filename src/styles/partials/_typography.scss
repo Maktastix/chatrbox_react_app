@@ -19,11 +19,13 @@ h1{
     font-size: 4rem;
 }
 
-.registration_container p{
+.registration_container p,
+.login_container p{
     font-size: 1.3rem;
     margin: 10px 0;
 }
 
-.registration_container p:last-child{
+.registration_container p:last-child,
+.login_container p:last-child{
     font-size: 0.8rem;
 }

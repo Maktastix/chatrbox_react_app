@@ -1,6 +1,8 @@
+import { Routes, Route } from 'react-router-dom';
 import Firebase from './Firebase';
-import Registration from './Components/Registration';
-import Login from './Components/Login';
+import Login from './Pages/Login';
+import Registration from './Pages/Registration';
+import Chat from './Pages/Chat';
 import "./styles/styles.scss";
 
 function App() {
@@ -8,7 +10,11 @@ function App() {
   
   return (
     <div className="App">
-      <Login />
+      <Chat />
+      {/* <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/Registration" element={<Registration />} />
+      </Routes> */}
     </div>
   );
 }

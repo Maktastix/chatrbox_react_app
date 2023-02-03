@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Avatar from '../assets/icons8_add_image.png';
 
 const Registration = () => {
     
     return(
-        <section>
+        <>
             <div className="registration_card">
                 <div className="registration_container">
-                    <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} />X</h1>
+                    <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} bounce />X</h1>
                     <p>Welcome to ChatrBox</p>
                     <p>Please Create an Account</p>
                     <form className="registration_form">
@@ -35,10 +36,10 @@ const Registration = () => {
                             <button type="submit">Sign Up</button>
                         </div>
                     </form>
-                    <p>Already have an account? <a href="#">Log in!</a></p>
+                    <p>Already have an account? <Link to="/">Log in!</Link></p>
                 </div>
             </div>
-        </section>
+        </>
     )
 }
 
