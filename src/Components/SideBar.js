@@ -1,7 +1,13 @@
+import Chats from './Chats';
+
 const SideBar = () => {
     return (
         <>
-            <div>SideBar</div>
+            <div className="side_bar">
+                <p>Sidebar</p>
+                <Chats />
+            </div>
+            
         </>
     )
 }

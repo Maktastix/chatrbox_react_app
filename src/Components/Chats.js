@@ -1,7 +1,9 @@
 const Chats = () => {
     return (
         <>
-            <div>Chats</div>
+            <div className="chats">
+                <p>Chats</p>
+            </div>
         </>
     )
 }

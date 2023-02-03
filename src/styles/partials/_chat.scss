@@ -2,3 +2,70 @@
 
 @use 'variables' as *;
 
+.chat_card{
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 90%;
+    height: 90vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+    color: #000000;
+
+    p{
+       margin: 0;
+    }
+
+    .navbar_container{
+        height: 70px;
+        background-color: $primary_color;
+    }
+
+    .chat_container{
+        height: calc(100% - 70px);
+        display: flex;
+
+        .sidebar_container{
+            width: 300px;
+            background-color: $tertiary_color;
+
+            .side_bar{
+                height: 100%;
+            }
+        }
+
+        .message_container{
+            width: calc(100% - 300px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: $quinary_color;
+            
+            .form_input{
+                height: 100px;
+                background-color: $secondary_color;
+            }
+            .messages{
+                height: calc(100% - 100px);
+            }
+        }
+    }
+
+    // .chat_container{
+    //     display: flex;
+
+    //     .sidebar{
+    //         width: 30%;
+    //     }
+
+    //     .chats{
+    //         width: 70%;
+    //     }
+    // }
+}

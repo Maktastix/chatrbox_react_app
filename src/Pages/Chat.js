@@ -1,14 +1,24 @@
 import SideBar from '../Components/SideBar';
-import Chats from '../Components/Chats';
+import NavBar from '../Components/NavBar';
+import FormInput from '../Components/FormInput';
+import Messages from '../Components/Messages';
 
 const Chat = () => {
 
     return(
         <>
             <div className="chat_card">
+                <div className="navbar_container">
+                    <NavBar />
+                </div>
                 <div className="chat_container">
-                    <SideBar />
-                    <Chats />
+                    <div className="sidebar_container">
+                        <SideBar />
+                    </div>
+                    <div className="message_container">
+                        <Messages />
+                        <FormInput />
+                    </div>
                 </div>
             </div>
         </>    
