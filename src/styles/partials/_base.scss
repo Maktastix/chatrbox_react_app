@@ -3,7 +3,6 @@
 @use 'variables' as *;
 
 body{
-    // background: linear-gradient(90deg, rgba(85, 193, 227, 1) 0%, rgba(215, 250, 255, 1) 100%);
-    background: linear-gradient(90deg, rgba(85, 193, 227, 1) 0%, rgba(115, 146, 255, 1) 100%);
+    background: linear-gradient(90deg, $primary_color 0%, $secondary_color 100%);
     color: #ffffff;
 }

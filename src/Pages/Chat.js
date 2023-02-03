@@ -1,13 +1,16 @@
+import {useState, useEffect } from 'react';
+
 import SideBar from '../Components/SideBar';
 import NavBar from '../Components/NavBar';
 import FormInput from '../Components/FormInput';
 import Messages from '../Components/Messages';
 
 const Chat = () => {
+    
 
     return(
         <>
-            <div className="chat_card">
+            <section className="chat_card">
                 <div className="navbar_container">
                     <NavBar />
                 </div>
@@ -20,7 +23,7 @@ const Chat = () => {
                         <FormInput />
                     </div>
                 </div>
-            </div>
+            </section>
         </>    
     )
 }

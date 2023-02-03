@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Firebase from './Firebase';
+// import Firebase from './Firebase';
 import Login from './Pages/Login';
 import Registration from './Pages/Registration';
 import Chat from './Pages/Chat';
@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <Chat />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Registration" element={<Registration />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

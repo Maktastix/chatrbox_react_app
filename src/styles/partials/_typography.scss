@@ -1,8 +1,5 @@
 // Typography Partial
 
-
-// Typography Partial
-
 @use 'variables' as *;
 
 html{
@@ -10,7 +7,7 @@ html{
 }
 
 body{
-    font-family: $body_font;
+    font-family: $logo_font;
 }
 
 h1{
@@ -28,4 +25,30 @@ h1{
 .registration_container p:last-child,
 .login_container p:last-child{
     font-size: 0.8rem;
+}
+
+.form_input input{
+    color: #ffffff;
+    font-family: $logo_font;
+}
+
+textarea{
+    font-family: $logo_font;
+}
+
+.navbar_container,
+.sidebar_container{
+    color: $octonary_color;
+
+    .nav_bar h1{
+        font-size: 1.3rem;
+
+        svg{
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.chat_card{
+    font-family: $logo_font;
 }

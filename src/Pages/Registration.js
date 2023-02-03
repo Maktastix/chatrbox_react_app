@@ -7,7 +7,7 @@ const Registration = () => {
     
     return(
         <>
-            <div className="registration_card">
+            <section className="registration_card">
                 <div className="registration_container">
                     <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} bounce />X</h1>
                     <p>Welcome to ChatrBox</p>
@@ -27,7 +27,7 @@ const Registration = () => {
                         </div>
                         <div className="form_file">
                             <label htmlFor="avatar">
-                                <img src={Avatar} alt="Add image icon" />
+                                <img src={Avatar} alt="Add avatar icon" />
                                 <p>Add Profile Picture</p>
                             </label>
                             <input type="file" id="avatar" accept="image/png, image/jpeg"></input>
@@ -38,7 +38,7 @@ const Registration = () => {
                     </form>
                     <p>Already have an account? <Link to="/">Log in!</Link></p>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

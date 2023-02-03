@@ -6,7 +6,7 @@ const Login = () => {
 
     return (
         <>
-            <div className="login_card">
+            <section className="login_card">
                 <div className="login_container">
                     <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} bounce />X</h1>
                     <p>Welcome to ChatrBox</p>
@@ -26,7 +26,7 @@ const Login = () => {
                     </form>
                     <p>Don't have an account? <Link to="/Registration">Sign up!</Link></p>
                 </div>
-            </div>
+            </section>
         </>
     )
 }
