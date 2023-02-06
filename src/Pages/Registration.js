@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { Authentication, Storage } from '../Firebase';
+import { Authentication, Storage, dbRef } from '../Firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { Link } from 'react-router-dom';
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate, Link } from 'react-router-dom';
+
+
 import Avatar from '../assets/icons8_add_image.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +13,7 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 const Registration = () => {
 
     const [error, setError] = useState(false);
-
+    const navigation = useNavigate();
     
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -36,9 +39,18 @@ const Registration = () => {
                             displayName,
                             photoURL: downloadURL,
                         });
+                        await setDoc(doc(dbRef, "users", response.user.uid), {
+                            uid: response.user.uid,
+                            displayName,
+                            email,
+                            photoURL: downloadURL,
+                        });
+                        await setDoc(doc(dbRef, "userChats", response.user.uid), {});
+                        navigation('/');
                     });
                 }
             );
+
         }catch(error){
             setError(true);
         }

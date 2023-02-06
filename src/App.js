@@ -1,11 +1,11 @@
-// Modules
-import { Routes, Route } from 'react-router-dom';
-import Firebase from './Firebase';
+// // Modules
+// import Firebase from './Firebase';
+// import { Routes, Route } from 'react-router-dom';
 
-// Components
-import Login from './Pages/Login';
-import Registration from './Pages/Registration';
-// import Chat from './Pages/Chat';
+// // Components
+// import Login from './Pages/Login';
+// import Registration from './Pages/Registration';
+import Chat from './Pages/Chat';
 
 // Styles
 import "./styles/styles.scss";
@@ -14,11 +14,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Chat /> */}
-      <Registration />
+      <Chat />
       {/* <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/Registration" element={<Registration />} />
+        <Route path="/">
+          <Route index element={<Chat />} />
+          <Route path="/Registration" element={<Registration />} />
+          <Route path="/Login" element={<Login />} />
+        </Route>
       </Routes> */}
     </div>
   );
