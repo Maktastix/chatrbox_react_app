@@ -1,5 +1,3 @@
-// import {useState, useEffect } from 'react';
-
 import SideBar from '../Components/SideBar';
 import NavBar from '../Components/NavBar';
 import FormInput from '../Components/FormInput';
