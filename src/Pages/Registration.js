@@ -81,7 +81,7 @@ const Registration = () => {
                                 <img src={Avatar} alt="Add avatar icon" />
                                 <p>Add Profile Picture</p>
                             </label>
-                            <input type="file" id="avatar" accept="image/png, image/jpeg" required></input>
+                            <input type="file" id="avatar" accept="image/*" required></input>
                         </div>
                         <div className="form_button">
                             <button type="submit">Sign Up</button>
