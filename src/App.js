@@ -7,6 +7,7 @@ import { AuthContext } from './Context/AuthContext';
 import Login from './Pages/Login';
 import Registration from './Pages/Registration';
 import Chat from './Pages/Chat';
+import Error from './Pages/Error';
 
 // Styles
 import "./styles/styles.scss";
@@ -25,7 +26,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Chat /> */}
       <Routes>
         <Route path="/">
           <Route 
@@ -38,6 +38,7 @@ function App() {
           />
           <Route path="/Registration" element={<Registration />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </div>

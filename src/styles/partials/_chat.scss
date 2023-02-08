@@ -275,7 +275,7 @@
 // Search Bar Styling
 
 .chat_scroll{
-    height: calc(100% - 80px);
+    height: calc(100% - 150px);
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: $octonary_color $senary_color;
@@ -318,5 +318,16 @@
         border-radius: 50%;
         object-fit: cover;
         margin-right: 10px;
+    }
+}
+
+.error_page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+        font-size: 1.3rem;
+        text-align: center;
     }
 }

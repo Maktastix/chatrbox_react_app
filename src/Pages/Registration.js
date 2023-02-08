@@ -13,9 +13,11 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 const Registration = () => {
 
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigation = useNavigate();
     
     const handleSubmit = async (event) => {
+        setLoading(true);
         event.preventDefault();
         const displayName = event.target[0].value;
         const email = event.target[1].value;
@@ -23,21 +25,16 @@ const Registration = () => {
         const file = event.target[3].files[0];
         
         try{
-            const response = await createUserWithEmailAndPassword(Authentication, email, password)
+            const response = await createUserWithEmailAndPassword(Authentication, email, password);
 
             const storageRef = ref(Storage, displayName);
 
-            const uploadTask = uploadBytesResumable(storageRef, file);
-
-            uploadTask.on(
-                (error) => {
-                    setError(true);
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
+            await uploadBytesResumable(storageRef, file).then(() => {
+                getDownloadURL(storageRef).then(async (downloadURL) => {
+                    try{
                         await updateProfile(response.user, {
                             displayName,
-                            photoURL: downloadURL,
+                            photoURL: downloadURL,        
                         });
                         await setDoc(doc(dbRef, "users", response.user.uid), {
                             uid: response.user.uid,
@@ -46,15 +43,18 @@ const Registration = () => {
                             photoURL: downloadURL,
                         });
                         await setDoc(doc(dbRef, "userChats", response.user.uid), {});
-                        navigation('/');
-                    });
-                }
-            );
-
+                        navigation("/");
+                    } catch(error) {
+                        setError(true);
+                        setLoading(false);
+                    }
+                }); 
+            });
         }catch(error){
             setError(true);
+            setLoading(false);
         }
-    }
+    };
 
     return(
         <>
@@ -66,26 +66,27 @@ const Registration = () => {
                     <form onSubmit={handleSubmit} action="submit" className="registration_form">
                         <div className="form_input">
                             <label htmlFor="name"></label>
-                            <input type="text" id="name" placeholder="Enter Display Name" /*required*/></input>
+                            <input type="text" id="name" placeholder="Enter Display Name" required></input>
                         </div>
                         <div className="form_input">
                             <label htmlFor="email"></label>
-                            <input type="email" id="email" placeholder="Enter Email" /*required*/></input>
+                            <input type="email" id="email" placeholder="Enter Email" required></input>
                         </div>
                         <div className="form_input">
                             <label htmlFor="password"></label>
-                            <input type="password" id="password" placeholder="Enter Password" /*required*/></input>
+                            <input type="password" id="password" placeholder="Enter Password" required></input>
                         </div>
                         <div className="form_file">
                             <label htmlFor="avatar">
                                 <img src={Avatar} alt="Add avatar icon" />
                                 <p>Add Profile Picture</p>
                             </label>
-                            <input type="file" id="avatar" accept="image/png, image/jpeg"></input>
+                            <input type="file" id="avatar" accept="image/png, image/jpeg" required></input>
                         </div>
                         <div className="form_button">
                             <button type="submit">Sign Up</button>
                         </div>
+                        {loading && "Uploading image..."}
                     </form>
                     {error && <span>Something went wrong...</span>}
                     <p>Already have an account? <Link to="/Login">Log in!</Link></p>

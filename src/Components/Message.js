@@ -30,7 +30,6 @@ const Message = ({message}) => {
                         } 
                         alt="" 
                     />
-                    <span>Just Now</span>
                 </div>
                 <div className="message_content">
                     <p>{message.text}</p>

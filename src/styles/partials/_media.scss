@@ -1,0 +1,80 @@
+// Media Queries Partial
+
+@media (max-width: 660px){
+    html{
+        font-size: 100%;
+    }
+
+    .chat_card .chat_container {
+        .sidebar_container{
+            width: 200px;
+        }
+
+        .message_container{
+            width: calc(100% - 200px);
+        }
+    }
+
+    .registration_card,
+    .login_card{
+        width: 450px;
+
+        .registration_container svg,
+        .login_container svg{
+            font-size: 48px;
+            margin: 0 5px 6px 3px;
+        }
+    }
+}
+
+@media (max-width: 470px){
+    .registration_card,
+    .login_card{
+        width: 400px;
+
+        .registration_form,
+        .login_form{
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            button{
+                width: 300px;
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 440px){
+    html{
+        font-size: 85%;
+    }
+
+    .chat_card .chat_container {
+        .sidebar_container{
+            width: 150px;
+        }
+
+        .message_container{
+            width: calc(100% - 150px);
+        }
+    }
+
+    .side_bar .chats .user_chats{
+        img{
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    .registration_card,
+    .login_card{
+        width: 350px;
+
+        .registration_container svg,
+        .login_container svg{
+            font-size: 40px;
+            margin: 0 5px 5px 3px;
+        }
+    }
+}
