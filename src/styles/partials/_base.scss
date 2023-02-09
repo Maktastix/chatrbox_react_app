@@ -1,0 +1,12 @@
+// Base Styles Partial
+
+@use 'variables' as *;
+
+body{
+    background: linear-gradient(90deg, $primary_color 0%, $secondary_color 100%);
+    color: #ffffff;
+}
+
+.wrapper{
+    max-width: 1400px;
+}

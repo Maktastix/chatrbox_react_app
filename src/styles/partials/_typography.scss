@@ -1,0 +1,54 @@
+// Typography Partial
+
+@use 'variables' as *;
+
+html{
+    font-size: 125%;
+}
+
+body{
+    font-family: $logo_font;
+}
+
+h1{
+    font-family: $logo_font;
+    letter-spacing: 3px;
+    font-size: 4rem;
+}
+
+.registration_container p,
+.login_container p{
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+.registration_container p:last-child,
+.login_container p:last-child{
+    font-size: 0.8rem;
+}
+
+.form_input input{
+    color: #ffffff;
+    font-family: $logo_font;
+}
+
+textarea{
+    font-family: $logo_font;
+}
+
+.navbar_container,
+.sidebar_container{
+    color: $octonary_color;
+
+    .nav_bar h1{
+        font-size: 1.3rem;
+
+        svg{
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.chat_card{
+    font-family: $logo_font;
+}

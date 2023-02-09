@@ -1,0 +1,132 @@
+// Registration Page Partial
+
+@use 'variables' as *;
+
+.registration_card,
+.login_card{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+    margin: 10vh auto;
+
+    .registration_container,
+    .login_container{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            margin: 0;
+        }
+
+        svg{
+            margin: 0 5px 8px 3px;
+            font-size: 63px;
+        }
+
+        a{
+            color: $quinary_color;
+            transition: 0.3s ease-in-out;
+
+            &:hover,
+            &:focus{
+                color: #ffffff;
+            }
+        }
+
+        span{
+            margin: 10px 0;
+        }
+
+        .minimize{
+            margin: 0;
+        }
+    }
+}
+
+.registration_form,
+.login_form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+
+    .form_input{
+        margin: 10px;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]{
+            background: none;
+            border-style: solid;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 30px;
+            width: 400px;
+            transition: 0.3s ease-in-out;
+
+            &:hover,
+            &:focus{
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .form_file{
+        margin-top: 20px;
+        width: 400px;
+        transition: 0.3s ease-in-out;
+
+        &:hover,
+        &:focus{
+            color: $tertiary_color;
+        }
+
+        input{
+            display: none;
+        }
+
+        label{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+
+            img{
+                height: 50px;
+                margin-right: 20px;
+            }
+            
+        }
+    }
+
+    .form_button{
+        margin: 20px 0;
+
+        button{
+            width: 400px;
+            height: 50px;
+            border: none;
+            border-radius: 16px;
+            background-color: $quinary_color;
+            color: #ffffff;
+            transition: 0.3s ease-in-out;
+
+            &:hover,
+            &:focus{
+                transform: scale(1.05);
+                background-color: $secondary_color;
+            }
+        }
+    }
+}
