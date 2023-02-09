@@ -8,7 +8,7 @@ const Chat = () => {
 
     return(
         <>
-            <section className="chat_card">
+            <section className="chat_card wrapper">
                 <div className="navbar_container">
                     <NavBar />
                 </div>

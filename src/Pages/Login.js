@@ -26,7 +26,7 @@ const Login = () => {
 
     return (
         <>
-            <section className="login_card">
+            <section className="login_card wrapper">
                 <div className="login_container">
                     <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} bounce />X</h1>
                     <p>Welcome to ChatrBox</p>

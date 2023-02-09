@@ -13,8 +13,15 @@ const Message = ({message}) => {
     useEffect(() => {
         ref.current?.scrollIntoView( {behaviour: "smooth" });
     }, [message]);
-
-
+    
+    const showName = () => {
+        if (message.senderId === currentUser.uid){
+            return currentUser.displayName;
+        } else {
+            return data.user.displayName;
+        }
+    }
+    
     return (
         <>
             <div
@@ -30,6 +37,7 @@ const Message = ({message}) => {
                         } 
                         alt="" 
                     />
+                    <span>{showName()}</span>
                 </div>
                 <div className="message_content">
                     <p>{message.text}</p>

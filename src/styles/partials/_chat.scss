@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    max-width: 1400px;
     height: 90vh;
     margin: 0 auto;
     margin-top: 5vh;
@@ -91,17 +90,22 @@
     display: flex;
     justify-content: space-between;
 
+    span{
+        display: flex;
+        align-items: center;
+    }
+    
     .account{
         display: flex;
         align-items: center;
-
+        
         img{
-            background-color: #ffffff;
-            height: 30px;
-            width: 30px;
+            background-color: $octonary_color;
+            height: 50px;
+            width: 50px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 10px;
+            // margin-right: 10px;
         }
 
         button{
@@ -140,6 +144,12 @@
         flex-direction: column;
         font-weight: $font_weight_thin;
         font-size: 0.7rem;
+        align-items: center;
+        width: 70px;
+
+        span{
+            text-align: center;
+        }
 
         
         img{
@@ -151,7 +161,7 @@
     }
 
     .message_content{
-        max-width: 80%;
+        max-width: calc(100% - 100px);
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -262,6 +272,7 @@
 
         .user_info{
             font-weight: $font_weight_regular;
+            width: calc(100% - 60px);
             
             .chat_content p{
                 font-size: 0.7rem;

@@ -58,11 +58,11 @@ const Registration = () => {
 
     return(
         <>
-            <section className="registration_card">
+            <section className="registration_card wrapper">
                 <div className="registration_container">
                     <h1 name="ChatrBox" type="logo">ChatrB<FontAwesomeIcon icon={faArrowUpRightFromSquare} bounce />X</h1>
-                    <p>Welcome to ChatrBox</p>
-                    <p>Please Create an Account</p>
+                    <p className="minimize">Welcome to ChatrBox</p>
+                    <p className="minimize">Please Create an Account</p>
                     <form onSubmit={handleSubmit} action="submit" className="registration_form">
                         <div className="form_input">
                             <label htmlFor="name"></label>
@@ -89,7 +89,7 @@ const Registration = () => {
                         {loading && "Uploading image..."}
                     </form>
                     {error && <span>Something went wrong...</span>}
-                    <p>Already have an account? <Link to="/Login">Log in!</Link></p>
+                    <p className="minimize">Already have an account? <Link to="/Login">Log in!</Link></p>
                 </div>
             </section>
         </>
